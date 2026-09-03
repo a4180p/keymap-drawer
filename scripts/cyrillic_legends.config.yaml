@@ -1,0 +1,12 @@
+# Styling for keymaps processed by add_cyrillic_legends.py
+#
+#   python scripts/add_cyrillic_legends.py in.yaml -o in_ru.yaml
+#   keymap -c scripts/cyrillic_legends.config.yaml draw in_ru.yaml
+draw_config:
+  svg_extra_style: |
+    /* Cyrillic legend: ASCII-sized, red, inset from the corner */
+    text.br { font-size: 14px; fill: red; transform: translate(-4px, -4px); }
+    /* modifiers moved to bottom-left by script: match br baseline */
+    text.bl { transform: translate(0, -4px); }
+    /* soften combo boxes so legends underneath stay readable */
+    rect.combo { fill-opacity: 0.45; }
