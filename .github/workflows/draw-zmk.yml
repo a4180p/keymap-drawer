@@ -33,6 +33,11 @@ on:
       extra_keymap_yaml:
         description: "Map of keyboard names to extra keymap YAMLs to be passed to `keymap draw` after the parsed one, e.g. `corne:'keymap-drawer/extra_combos.yaml'`"
         type: string
+      cyrillic_legends:
+        description: >-
+          Overlay Cyrillic (ЙЦУКЕН) legends in the bottom-right corner of
+          each key. Requires a fork providing `keymap-cyrillic`.
+        type: boolean
       commit_message:
         description: 'Commit message for updated images. Ignored if `amend_commit` is `true`.'
         type: string
@@ -188,6 +193,16 @@ jobs:
                   echo "ERROR: parsing failed for $keyboard!"
                   error_occurred=1
                   continue
+              fi
+
+              if [ "${{ inputs.cyrillic_legends }}" == "true" ]; then
+                  if ! command -v keymap-cyrillic >/dev/null; then
+                      echo "ERROR: keymap-cyrillic not found; see install_repo"
+                      exit 1
+                  fi
+                  echo "INFO:   adding Cyrillic legends"
+                  keymap-cyrillic "${{ inputs.output_folder }}/$keyboard.yaml" \
+                      -o "${{ inputs.output_folder }}/$keyboard.yaml"
               fi
 
               if keymap $debug_arg "${config_arg[@]}" draw "${{ inputs.output_folder }}/$keyboard.yaml" "${extra_keymap_yaml[@]}" "${draw_args[@]}" >"$tmp_svg"; then

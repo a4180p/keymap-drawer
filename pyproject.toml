@@ -23,6 +23,7 @@ lsp = ["python-lsp-server"]
 
 [project.scripts]
 keymap = 'keymap_drawer.__main__:main'
+keymap-cyrillic = 'keymap_drawer.cyrillic:main'
 
 [project.urls]
 homepage = "https://github.com/caksoylar/keymap-drawer"
