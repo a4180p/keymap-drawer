@@ -25,6 +25,11 @@ CYRILLIC = {
     "N": "т", "M": "ь",
     "[": "х", "]": "ъ", ";": "ж", "'": "э",
     ",": "б", ".": "ю", "/": ".", "`": "ё",
+    # shifted forms: same physical key with Shift held
+    "{": "Х", "}": "Ъ", ":": "Ж", '"': "Э",
+    "<": "Б", ">": "Ю", "?": ",", "~": "Ё", "|": "/",
+    # the shifted number row differs from US entirely
+    "@": '"', "#": "№", "$": ";", "^": ":", "&": "?",
 }
 
 TAP_ALIASES = ("t", "tap", "center")
