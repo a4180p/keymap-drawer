@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="keymap-drawer logo" src="https://caksoylar.github.io/keymap-drawer/logo.svg" max-width="100%"/>
+  <img alt="keymap-drawer logo" src="site/logo.svg" max-width="100%"/>
 </h1>
 
 [![PyPI version](https://img.shields.io/pypi/v/keymap-drawer.svg)](https://pypi.org/project/keymap-drawer/)
@@ -10,7 +10,7 @@ Available as a [command-line tool](#command-line-tool-installation) or a [web ap
 
 <div align="center">
   <a href="examples/showcase.yaml">
-    <img alt="Example keymap visualization" src="https://caksoylar.github.io/keymap-drawer/showcase.svg"/>
+    <img alt="Example keymap visualization" src="site/showcase.svg"/>
   </a>
 </div>
 
@@ -354,7 +354,7 @@ This project requires Python 3.12+ and uses [Poetry](https://python-poetry.org/)
 To get started, [install Poetry](https://python-poetry.org/docs/#installation), clone this repo, then install dependencies with the `poetry` command:
 
 ```sh
-git clone https://github.com/caksoylar/keymap-drawer.git
+git clone https://github.com/a4180p/keymap-drawer.git
 cd keymap-drawer
 poetry install  # -E dev -E lsp (optional dependencies)
 ```

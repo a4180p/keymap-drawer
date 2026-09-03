@@ -3,25 +3,65 @@ layout:
   layout_name: LAYOUT_split_3x5_3
 layers:
   Base:
-    - [Q, W, F, P, B, J, L, U, Y, "'"]
-    - [{h: Ctrl, t: A}, {h: Gui, t: R}, {h: Alt, t: S}, {h: Shift, t: T}, G, M, {h: Shift, t: N}, {h: Alt, t: E}, {h: Gui, t: I}, {h: Ctrl, t: O}]
-    - [Z, X, C, D, V, K, H, {t: ',', s: '<'}, {t: ., s: '>'}, {t: /, s: '?'}]
-    - {h: Gui,   t: $$mdi:keyboard-tab$$, type: ghost}
-    - {h: Ctrl,  t: $$mdi:keyboard-esc$$}
-    - {h: NAV,   t: $$mdi:backspace-outline$$}
-    - {h: SYM,   t: $$mdi:keyboard-space$$}
-    - {h: Shift, t: $$mdi:keyboard-return$$}
-    - {h: Alt,   t: $$mdi:backspace-reverse-outline$$, type: ghost}
+    - [
+        { t: Q, br: й },
+        { t: W, br: ц },
+        { t: F, br: а },
+        { t: P, br: з },
+        { t: B, br: и },
+        { t: J, br: о },
+        { t: L, br: д },
+        { t: U, br: г },
+        { t: Y, br: н },
+        { t: "'", br: э },
+      ]
+    - [
+        { bl: Ctrl, t: A, br: ф },
+        { bl: Gui, t: R, br: к },
+        { bl: Alt, t: S, br: ы },
+        { bl: Shift, t: T, br: е },
+        { t: G, br: п },
+        { t: M, br: ь },
+        { bl: Shift, t: N, br: т },
+        { bl: Alt, t: E, br: у },
+        { bl: Gui, t: I, br: ш },
+        { bl: Ctrl, t: O, br: щ },
+      ]
+    - [
+        { t: Z, br: я },
+        { t: X, br: ч },
+        { t: C, br: с },
+        { t: D, br: в },
+        { t: V, br: м },
+        { t: K, br: л },
+        { t: H, br: р },
+        { t: ",", s: "<", br: б },
+        { t: ., s: ">", br: ю },
+        { t: /, s: "?", br: . },
+      ]
+    - { h: Gui, t: $$mdi:keyboard-tab$$, type: ghost }
+    - { h: Ctrl, t: $$mdi:keyboard-esc$$ }
+    - { h: NAV, t: $$mdi:backspace-outline$$ }
+    - { h: SYM, t: $$mdi:keyboard-space$$ }
+    - { h: Shift, t: $$mdi:keyboard-return$$ }
+    - { h: Alt, t: $$mdi:backspace-reverse-outline$$, type: ghost }
 combos:
-  - {p: [0, 10, 20], k: RST, a: left}
-  - {p: [4, 5], k: BOOT, a: top}
-  - {p: [13, 16], k: Caps Wrd, a: top}
-  - {p: [27, 29], k: 😬, a: bottom}
-  - {p: [12, 13], k: '('}
-  - {p: [16, 17], k: ')'}
-  - {p: [11, 12], k: '['}
-  - {p: [17, 18], k: ']'}
-  - {p: [14, 24], k: $$mdi:play-pause$$}
+  - { p: [0, 10, 20], k: RST, a: left }
+  - { p: [4, 5], k: BOOT, a: top }
+  - { p: [13, 16], k: Caps Wrd, a: top }
+  - { p: [27, 29], k: 😬, a: bottom }
+  - { p: [12, 13], k: "(" }
+  - { p: [16, 17], k: ")" }
+  - { p: [11, 12], k: "[" }
+  - { p: [17, 18], k: "]" }
+  - { p: [14, 24], k: $$mdi:play-pause$$ }
 draw_config:
   glyph_tap_size: 18
   dark_mode: auto
+  svg_extra_style: |
+    /* Cyrillic legend: ASCII-sized, red, inset from the corner */
+    text.br { font-size: 14px; fill: red; transform: translate(-4px, -4px); }
+    /* modifiers moved to bottom-left: match br baseline */
+    text.bl { transform: translate(0, -4px); }
+    /* soften combo boxes so legends underneath stay readable */
+    rect.combo { fill-opacity: 0.45; }

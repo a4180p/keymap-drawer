@@ -160,7 +160,7 @@ path.combo { stroke: #7f7f7f; }
 }
 /* Cyrillic legend: ASCII-sized, red, inset from the corner */
 text.br { font-size: 14px; fill: red; transform: translate(-4px, -4px); }
-/* modifiers moved to bottom-left by script: match br baseline */
+/* modifiers moved to bottom-left: match br baseline */
 text.bl { transform: translate(0, -4px); }
 /* soften combo boxes so legends underneath stay readable */
 rect.combo { fill-opacity: 0.45; }
